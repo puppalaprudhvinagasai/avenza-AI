@@ -1,0 +1,298 @@
+/* ==========================================
+   AVENZA AI - Animations v1.0
+   Premium UI Motion System
+========================================== */
+
+/* ===== Smooth Transition ===== */
+
+*{
+    transition:
+    background-color .35s ease,
+    color .35s ease,
+    border-color .35s ease,
+    transform .35s ease,
+    box-shadow .35s ease,
+    opacity .35s ease;
+}
+
+/* ===== Fade Up ===== */
+
+@keyframes fadeUp{
+
+0%{
+opacity:0;
+transform:translateY(40px);
+}
+
+100%{
+opacity:1;
+transform:translateY(0);
+}
+
+}
+
+/* ===== Fade Down ===== */
+
+@keyframes fadeDown{
+
+0%{
+opacity:0;
+transform:translateY(-40px);
+}
+
+100%{
+opacity:1;
+transform:translateY(0);
+}
+
+}
+
+/* ===== Fade Left ===== */
+
+@keyframes fadeLeft{
+
+0%{
+opacity:0;
+transform:translateX(-40px);
+}
+
+100%{
+opacity:1;
+transform:translateX(0);
+}
+
+}
+
+/* ===== Fade Right ===== */
+
+@keyframes fadeRight{
+
+0%{
+opacity:0;
+transform:translateX(40px);
+}
+
+100%{
+opacity:1;
+transform:translateX(0);
+}
+
+}
+
+/* ===== Zoom ===== */
+
+@keyframes zoomIn{
+
+0%{
+opacity:0;
+transform:scale(.85);
+}
+
+100%{
+opacity:1;
+transform:scale(1);
+}
+
+}
+
+/* ===== Floating ===== */
+
+@keyframes floating{
+
+0%,100%{
+transform:translateY(0);
+}
+
+50%{
+transform:translateY(-14px);
+}
+
+}
+
+/* ===== Rotate ===== */
+
+@keyframes rotate360{
+
+from{
+transform:rotate(0deg);
+}
+
+to{
+transform:rotate(360deg);
+}
+
+}
+
+/* ===== Pulse ===== */
+
+@keyframes pulse{
+
+0%{
+transform:scale(1);
+}
+
+50%{
+transform:scale(1.05);
+}
+
+100%{
+transform:scale(1);
+}
+
+}
+
+/* ===== Shine Effect ===== */
+
+@keyframes shine{
+
+0%{
+background-position:-200%;
+}
+
+100%{
+background-position:200%;
+}
+
+}
+
+/* ===== Utility Classes ===== */
+
+.fade-up{
+animation:fadeUp .8s ease forwards;
+}
+
+.fade-down{
+animation:fadeDown .8s ease forwards;
+}
+
+.fade-left{
+animation:fadeLeft .8s ease forwards;
+}
+
+.fade-right{
+animation:fadeRight .8s ease forwards;
+}
+
+.zoom-in{
+animation:zoomIn .8s ease forwards;
+}
+
+.floating{
+animation:floating 4s ease-in-out infinite;
+}
+
+.rotate{
+animation:rotate360 10s linear infinite;
+}
+
+.pulse{
+animation:pulse 2s infinite;
+}
+
+/* ===== Hover Lift ===== */
+
+.hover-lift:hover{
+
+transform:translateY(-8px);
+
+box-shadow:0 20px 40px rgba(0,0,0,.12);
+
+}
+
+/* ===== Glass Hover ===== */
+
+.glass-hover:hover{
+
+backdrop-filter:blur(24px);
+
+transform:translateY(-6px);
+
+}
+
+/* ===== Gradient Text ===== */
+
+.gradient-text{
+
+background:linear-gradient(
+90deg,
+#1565FF,
+#00C2FF,
+#2EE6A6
+);
+
+background-size:200%;
+
+-webkit-background-clip:text;
+
+-webkit-text-fill-color:transparent;
+
+animation:shine 6s linear infinite;
+
+}
+
+/* ===== Hero Glow ===== */
+
+.hero-glow{
+
+position:relative;
+
+}
+
+.hero-glow::before{
+
+content:"";
+
+position:absolute;
+
+width:250px;
+height:250px;
+
+background:#1565FF;
+
+filter:blur(120px);
+
+opacity:.25;
+
+z-index:-1;
+
+animation:floating 6s infinite;
+
+}
+
+/* ===== Page Loader ===== */
+
+.loader{
+
+width:52px;
+
+height:52px;
+
+border:5px solid rgba(255,255,255,.15);
+
+border-top:5px solid #1565FF;
+
+border-radius:50%;
+
+animation:rotate360 1s linear infinite;
+
+}
+
+/* ===== Scroll Reveal ===== */
+
+.reveal{
+
+opacity:0;
+
+transform:translateY(40px);
+
+}
+
+.reveal.active{
+
+opacity:1;
+
+transform:translateY(0);
+
+transition:.8s ease;
+
+}

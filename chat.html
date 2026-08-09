@@ -1,0 +1,414 @@
+ <!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Avenza AI - Chat</title>
+
+    <!-- FontAwesome Icons Library -->
+    <link rel="stylesheet"
+          href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+    <!-- Avenza Chat CSS -->
+    <link rel="stylesheet" href="chat.css">
+</head>
+
+<body>
+
+    <!-- Avenza AI Sidebar -->
+    <aside class="sidebar" id="sidebar">
+
+        <div class="sidebar-header">
+
+            <div class="brand-logo-title">
+
+                <img
+                    src="../../assets/image/logo.png"
+                    alt="Avenza Logo"
+                    class="brand-logo-img"
+                    onerror="this.src='https://via.placeholder.com/26'"
+                >
+
+                <h2 class="sidebar-title">Avenza AI</h2>
+
+            </div>
+
+            <button class="close-btn" id="closeSidebarBtn">
+                <i class="fa-solid fa-xmark"></i>
+            </button>
+
+        </div>
+
+
+        <div class="sidebar-body">
+
+            <button class="new-chat-btn" id="newChatBtn">
+
+                <i class="fa-solid fa-pen-to-square"></i>
+
+                <span>New Chat</span>
+
+            </button>
+
+
+            <!-- Live Search Box -->
+            <div class="sidebar-search-box">
+
+                <i class="fa-solid fa-magnifying-glass"></i>
+
+                <input
+                    type="text"
+                    id="sidebarSearchInput"
+                    placeholder="Search chats..."
+                >
+
+            </div>
+
+
+            <ul class="nav-menu">
+
+                <li class="nav-link">
+                    <i class="fa-solid fa-clapperboard"></i>
+                    <span>Videos</span>
+                </li>
+
+                <li class="nav-link">
+                    <i class="fa-solid fa-shapes"></i>
+                    <span>Library</span>
+                </li>
+
+            </ul>
+
+
+            <div class="section-label">
+                Recents
+            </div>
+
+
+            <ul class="recent-list" id="recentChatsList">
+                <!-- Dynamically Saved Chats -->
+            </ul>
+
+        </div>
+
+
+        <!-- Sidebar User Email & Profile -->
+        <div class="sidebar-footer">
+
+            <div class="user-info">
+
+                <img
+                    src="../../assets/image/user.png"
+                    alt="User Profile"
+                    class="user-avatar-img"
+                    onerror="this.src='https://via.placeholder.com/34'"
+                >
+
+                <div class="user-details">
+
+                    <span class="user-name">
+                        prudhvi
+                    </span>
+
+                    <span class="user-email">
+                        prudhvi@gmail.com
+                    </span>
+
+                </div>
+
+            </div>
+
+
+            <button class="icon-btn" id="settingsBtn">
+
+                <i class="fa-solid fa-gear"></i>
+
+            </button>
+
+        </div>
+
+    </aside>
+
+
+    <div class="sidebar-overlay" id="sidebarOverlay"></div>
+
+
+    <!-- Main Chat Window -->
+    <div class="chat-app-wrapper">
+
+
+        <!-- Header Nav -->
+        <header class="top-nav">
+
+            <div class="nav-left">
+
+                <button class="icon-btn" id="openSidebarBtn">
+
+                    <i class="fa-solid fa-bars"></i>
+
+                </button>
+
+
+                <div class="app-brand">
+
+                    <img
+                        src="../../assets/image/logo.png"
+                        alt="Avenza Logo"
+                        class="header-logo"
+                        onerror="this.src='https://via.placeholder.com/26'"
+                    >
+
+                    <h1 class="app-brand-title">
+                        Avenza AI
+                    </h1>
+
+                </div>
+
+            </div>
+
+
+            <div class="nav-right">
+
+                <div class="bot-badge-status">
+
+                    <div class="badge-avatar">
+
+                        <img
+                            src="../../assets/image/robot.png"
+                            alt="Avenza Icon"
+                            onerror="this.src='https://via.placeholder.com/22'"
+                        >
+
+                    </div>
+
+
+                    <div class="badge-text">
+
+                        <span class="badge-title">
+                            Avenza AI
+                        </span>
+
+                        <span class="badge-online">
+
+                            <span class="green-dot"></span>
+
+                            ONLINE
+
+                        </span>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </header>
+
+
+        <!-- Dynamic Chat Body -->
+        <main class="chat-area" id="chatArea">
+
+
+            <div class="hero-container" id="heroContainer">
+
+                <div class="hero-avatar-glow">
+                    <img
+                        src="../../assets/image/animated robot.png"
+                        alt="Avenza Robot"
+                        class="hero-robot animated-robot"
+                        onerror="this.src='../../assets/image/robot.png'"
+                    >
+                </div>
+
+                <h2 class="main-title">
+                    Avenza AI Ready
+                </h2>
+
+                <p class="main-subtitle">
+                    Ask me anything - I'm your intelligent command center.
+                </p>
+
+                <div class="chips-wrapper">
+
+                    <button class="prompt-chip">
+                        What can you do?
+                    </button>
+
+                    <button class="prompt-chip">
+                        Tell me a joke
+                    </button>
+
+                    <button class="prompt-chip">
+                        Explain quantum physics
+                    </button>
+
+                    <button class="prompt-chip">
+                        Help me code something
+                    </button>
+
+                </div>
+
+            </div>
+
+
+            <!-- Messages Stream Container -->
+            <div
+                class="messages-wrapper"
+                id="messagesWrapper">
+            </div>
+
+        </main>
+
+
+        <!-- Gemini Style (+) Plus Attachment Menu -->
+        <div
+            class="attachment-menu"
+            id="attachmentMenu"
+        >
+
+            <div class="attach-item" data-type="image">
+
+                <i class="fa-solid fa-image"></i>
+
+                <span>
+                    Photos & Images
+                </span>
+
+            </div>
+
+
+            <div class="attach-item" data-type="video">
+
+                <i class="fa-solid fa-video"></i>
+
+                <span>
+                    Videos
+                </span>
+
+            </div>
+
+
+            <div class="attach-item" data-type="pdf">
+
+                <i class="fa-solid fa-file-pdf"></i>
+
+                <span>
+                    PDF Document
+                </span>
+
+            </div>
+
+
+            <div class="attach-item" data-type="file">
+
+                <i class="fa-solid fa-paperclip"></i>
+
+                <span>
+                    All Files & Docs
+                </span>
+
+            </div>
+
+
+            <div class="attach-item" data-type="location">
+
+                <i class="fa-solid fa-location-dot"></i>
+
+                <span>
+                    Location
+                </span>
+
+            </div>
+
+
+            <div class="attach-item" data-type="audio">
+
+                <i class="fa-solid fa-music"></i>
+
+                <span>
+                    Audio Files
+                </span>
+
+            </div>
+
+
+            <input
+                type="file"
+                id="hiddenFileInput"
+                style="display: none;"
+            >
+
+        </div>
+
+
+        <!-- Bottom Input Footer -->
+        <footer class="chat-footer-input">
+
+            <div class="input-wrapper">
+
+
+                <button
+                    class="attach-btn"
+                    id="plusMenuBtn"
+                    title="Attach Files (Gemini Style)"
+                >
+
+                    <i class="fa-solid fa-plus"></i>
+
+                </button>
+
+
+                <input
+                    type="text"
+                    placeholder="Message Avenza AI..."
+                    id="chatInput"
+                    autocomplete="off"
+                >
+
+
+                <button
+                    class="mic-btn"
+                    id="micBtn"
+                    title="Voice Input"
+                >
+
+                    <i class="fa-solid fa-microphone"></i>
+
+                </button>
+
+
+                <button
+                    class="send-button"
+                    id="sendBtn"
+                    title="Send Message"
+                >
+
+                    <i class="fa-solid fa-paper-plane"></i>
+
+                </button>
+
+            </div>
+
+
+            <p class="footer-disclaimer">
+
+                Avenza AI can make mistakes.
+                Verify important information.
+
+            </p>
+
+        </footer>
+
+    </div>
+
+
+    <!-- Avenza Chat JavaScript -->
+    <script src="../../api/config.js"></script>
+    <script src="../../api/groq.js"></script>
+    <script src="./chat.js"></script>
+     
+    <script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
+    
+</body>
+</html>

@@ -1,0 +1,163 @@
+/* ==========================================
+   AVENZA AI - Theme System v1.0
+   ========================================== */
+
+/* Google Fonts */
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=Poppins:wght@300;400;500;600;700;800&display=swap');
+
+/* ===========================
+   Root Variables
+=========================== */
+
+:root{
+
+/* Brand Colors */
+
+--primary:#1565FF;
+--primary-light:#4F8CFF;
+--primary-dark:#0A46C4;
+
+--secondary:#00C2FF;
+--accent:#2EE6A6;
+
+--success:#22C55E;
+--warning:#F59E0B;
+--danger:#EF4444;
+--info:#38BDF8;
+
+/* Light Theme */
+
+--bg:#F5F8FF;
+--surface:#FFFFFF;
+--surface-2:#EEF3FF;
+
+--text:#0F172A;
+--text-light:#64748B;
+
+--border:#D8E3F5;
+
+/* Shadows */
+
+--shadow-sm:0 2px 8px rgba(0,0,0,.05);
+--shadow-md:0 8px 24px rgba(0,0,0,.08);
+--shadow-lg:0 20px 45px rgba(0,0,0,.12);
+
+/* Radius */
+
+--radius-xs:6px;
+--radius-sm:10px;
+--radius-md:16px;
+--radius-lg:22px;
+--radius-xl:30px;
+--radius-full:999px;
+
+/* Fonts */
+
+--font-heading:'Poppins',sans-serif;
+--font-body:'Inter',sans-serif;
+
+/* Font Sizes */
+
+--fs-xs:.75rem;
+--fs-sm:.875rem;
+--fs-md:1rem;
+--fs-lg:1.125rem;
+--fs-xl:1.5rem;
+--fs-2xl:2rem;
+--fs-3xl:3rem;
+--fs-4xl:4rem;
+
+/* Spacing */
+
+--space-1:4px;
+--space-2:8px;
+--space-3:12px;
+--space-4:16px;
+--space-5:20px;
+--space-6:24px;
+--space-7:32px;
+--space-8:40px;
+--space-9:48px;
+
+/* Transition */
+
+--transition:.3s ease;
+
+/* Layout */
+
+--container:1280px;
+
+}
+
+/* ===========================
+   Dark Theme
+=========================== */
+
+[data-theme="dark"]{
+
+--bg:#08111F;
+--surface:#111C2E;
+--surface-2:#18263D;
+
+--text:#F8FAFC;
+--text-light:#94A3B8;
+
+--border:#233550;
+
+}
+
+/* ===========================
+   Global Reset
+=========================== */
+
+*{
+margin:0;
+padding:0;
+box-sizing:border-box;
+}
+
+html{
+scroll-behavior:smooth;
+}
+
+body{
+
+font-family:var(--font-body);
+background:var(--bg);
+color:var(--text);
+transition:var(--transition);
+
+}
+
+img{
+max-width:100%;
+display:block;
+}
+
+button{
+font-family:inherit;
+cursor:pointer;
+}
+
+input,
+textarea,
+select{
+font-family:inherit;
+outline:none;
+}
+
+a{
+text-decoration:none;
+color:inherit;
+}
+
+ul{
+list-style:none;
+}
+
+.container{
+
+width:min(100% - 32px,var(--container));
+margin:auto;
+
+}

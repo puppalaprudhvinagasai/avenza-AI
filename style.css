@@ -1,0 +1,421 @@
+/* ===========================================
+   AVENZA AI v2.0
+   Premium Global Styles
+=========================================== */
+
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap');
+
+:root{
+
+--bg:#080B14;
+--surface:#101624;
+--surface2:#171E2F;
+
+--primary:#7C3AED;
+--secondary:#4F46E5;
+--accent:#38BDF8;
+
+--text:#FFFFFF;
+--text2:#B7C1D1;
+
+--border:rgba(255,255,255,.08);
+
+--radius:20px;
+
+--shadow:
+0 15px 40px rgba(124,58,237,.28);
+
+--transition:.35s ease;
+
+}
+
+*{
+
+margin:0;
+padding:0;
+box-sizing:border-box;
+font-family:"Inter",sans-serif;
+
+}
+
+html{
+
+scroll-behavior:smooth;
+
+}
+
+body{
+
+background:
+radial-gradient(circle at top,
+#1A1440 0%,
+#0C1020 35%,
+#080B14 100%);
+
+color:var(--text);
+
+overflow:hidden;
+
+height:100vh;
+
+}
+
+button{
+
+border:none;
+outline:none;
+cursor:pointer;
+
+transition:var(--transition);
+
+}
+
+input,
+textarea{
+
+font-family:"Inter",sans-serif;
+
+outline:none;
+
+border:none;
+
+}
+
+img{
+
+display:block;
+
+max-width:100%;
+
+}
+
+a{
+
+text-decoration:none;
+
+color:inherit;
+
+}
+
+.app{
+
+width:100%;
+
+height:100vh;
+
+display:flex;
+
+overflow:hidden;
+
+background:transparent;
+
+}
+ /* ===========================================
+   Premium Scrollbar
+=========================================== */
+
+::-webkit-scrollbar{
+
+width:8px;
+
+}
+
+::-webkit-scrollbar-track{
+
+background:#0A0F1D;
+
+}
+
+::-webkit-scrollbar-thumb{
+
+background:linear-gradient(
+180deg,
+var(--primary),
+var(--accent)
+);
+
+border-radius:50px;
+
+}
+
+/* ===========================================
+   Glassmorphism
+=========================================== */
+
+.glass{
+
+background:rgba(255,255,255,.05);
+
+backdrop-filter:blur(18px);
+
+-webkit-backdrop-filter:blur(18px);
+
+border:1px solid rgba(255,255,255,.08);
+
+box-shadow:0 8px 35px rgba(0,0,0,.25);
+
+}
+
+/* ===========================================
+   Neon Glow
+=========================================== */
+
+.glow{
+
+box-shadow:
+
+0 0 10px rgba(124,58,237,.5),
+
+0 0 30px rgba(124,58,237,.35),
+
+0 0 60px rgba(56,189,248,.18);
+
+}
+
+/* ===========================================
+   Premium Buttons
+=========================================== */
+
+.btn{
+
+display:flex;
+
+align-items:center;
+
+justify-content:center;
+
+gap:10px;
+
+padding:14px 22px;
+
+border-radius:18px;
+
+background:linear-gradient(
+
+135deg,
+
+var(--primary),
+
+var(--secondary)
+
+);
+
+color:#fff;
+
+font-weight:600;
+
+transition:.35s;
+
+}
+
+.btn:hover{
+
+transform:translateY(-3px);
+
+box-shadow:
+
+0 10px 35px rgba(124,58,237,.45);
+
+}
+
+/* ===========================================
+   Floating Animation
+=========================================== */
+
+@keyframes floating{
+
+0%{
+
+transform:translateY(0);
+
+}
+
+50%{
+
+transform:translateY(-10px);
+
+}
+
+100%{
+
+transform:translateY(0);
+
+}
+
+}
+
+.float{
+
+animation:floating 4s ease-in-out infinite;
+
+}
+
+/* ===========================================
+   Fade Animation
+=========================================== */
+
+@keyframes fadeUp{
+
+from{
+
+opacity:0;
+
+transform:translateY(20px);
+
+}
+
+to{
+
+opacity:1;
+
+transform:translateY(0);
+
+}
+
+}
+
+.fade-up{
+
+animation:fadeUp .6s ease;
+
+}
+ /* ===========================================
+   Typography
+=========================================== */
+
+h1,h2,h3,h4,h5,h6{
+
+font-weight:700;
+color:var(--text);
+
+}
+
+p{
+
+color:var(--text2);
+line-height:1.7;
+
+}
+
+/* ===========================================
+   Icon Button
+=========================================== */
+
+.icon-btn{
+
+width:48px;
+height:48px;
+
+display:flex;
+align-items:center;
+justify-content:center;
+
+border-radius:50%;
+
+background:rgba(255,255,255,.06);
+
+border:1px solid rgba(255,255,255,.08);
+
+color:#fff;
+
+font-size:20px;
+
+transition:.3s;
+
+}
+
+.icon-btn:hover{
+
+background:linear-gradient(
+135deg,
+var(--primary),
+var(--secondary)
+);
+
+transform:scale(1.08);
+
+}
+
+/* ===========================================
+   Cards
+=========================================== */
+
+.card{
+
+background:rgba(255,255,255,.05);
+
+border:1px solid rgba(255,255,255,.08);
+
+border-radius:24px;
+
+backdrop-filter:blur(20px);
+
+padding:18px;
+
+box-shadow:0 10px 30px rgba(0,0,0,.25);
+
+}
+
+/* ===========================================
+   Utility Classes
+=========================================== */
+
+.hidden{
+
+display:none !important;
+
+}
+
+.center{
+
+display:flex;
+align-items:center;
+justify-content:center;
+
+}
+
+.row{
+
+display:flex;
+align-items:center;
+
+}
+
+.column{
+
+display:flex;
+flex-direction:column;
+
+}
+
+.space-between{
+
+display:flex;
+align-items:center;
+justify-content:space-between;
+
+}
+
+.w-100{
+
+width:100%;
+
+}
+
+.h-100{
+
+height:100%;
+
+}
+
+/* ===========================================
+   Selection
+=========================================== */
+
+::selection{
+
+background:var(--primary);
+
+color:#fff;
+
+}
